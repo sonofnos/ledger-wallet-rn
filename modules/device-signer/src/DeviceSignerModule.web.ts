@@ -5,7 +5,7 @@ import type { DeviceSignerEvents, DeviceSignerNativeModule } from './DeviceSigne
 // Web has no Secure Enclave / Android Keystore and no biometric gate, so this
 // is a software-only ECDSA key via WebCrypto purely to keep `expo start --web`
 // previews from crashing. It is not representative of the real security
-// story — that lives in the iOS/Android native implementations.
+// story; that lives in the iOS/Android native implementations.
 class DeviceSignerModule extends NativeModule<DeviceSignerEvents> implements DeviceSignerNativeModule {
   private keyPairPromise: Promise<CryptoKeyPair> | null = null;
 

@@ -64,7 +64,7 @@ class DeviceSignerModule : Module() {
 
   /**
    * Unlike iOS, Android's Keystore does not surface the biometric prompt on
-   * its own — a key with setUserAuthenticationRequired(true) throws
+   * its own. A key with setUserAuthenticationRequired(true) throws
    * UserNotAuthenticatedException on sign() until a BiometricPrompt unlocks
    * a CryptoObject wrapping that same Signature instance. That wiring has to
    * happen against the current Activity, which is why this half of the

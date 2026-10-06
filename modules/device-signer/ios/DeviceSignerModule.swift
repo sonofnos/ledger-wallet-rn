@@ -79,7 +79,7 @@ public class DeviceSignerModule: Module {
 
   /// Tries to create a Secure Enclave-backed key first. Real devices and
   /// modern simulators support this, but some CI/simulator combinations
-  /// reject kSecAttrTokenIDSecureEnclave — in that case we fall back to a
+  /// reject kSecAttrTokenIDSecureEnclave. In that case we fall back to a
   /// software-backed EC key with the same biometric access-control gate so
   /// the signing flow still works end to end, just without hardware backing.
   private static func createKey() throws -> SecKey {
