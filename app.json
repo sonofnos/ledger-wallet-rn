@@ -1,15 +1,22 @@
 {
   "expo": {
-    "name": "ledger-wallet-rn",
+    "name": "Ledger Wallet",
     "slug": "ledger-wallet-rn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sonofnos.ledgerwallet",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Ledger Wallet uses Face ID to sign transfers with your device's secure key."
+      }
     },
     "android": {
+      "package": "com.sonofnos.ledgerwallet",
+      "permissions": ["USE_BIOMETRIC", "USE_FINGERPRINT"],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -20,6 +27,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow Ledger Wallet to access your Face ID biometric data."
+        }
+      ]
+    ]
   }
 }
